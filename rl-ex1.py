@@ -90,3 +90,82 @@ for r in range(rows):
         else:
             row_str += " " + arrow[policy[(r,c)]] + " "
     print(row_str)
+
+
+
+{
+  "territory_configs": [
+    {
+      "territory": { "country_code_2": "IT" },
+      "set_config": [
+        {
+          "set_id": "set_1",
+          "name": "Vendor inclusion - IKEA",
+          "enabled": true,
+          "subsets": [
+            {
+              "subset_id": "subset_1a",
+              "name": "shoppers at ikea",
+              "predicate": { "val": "ikea", "criterion_type": "include_vendor" }
+            }
+          ]
+        },
+        {
+          "set_id": "set_2",
+          "name": "All regions in Italy",
+          "enabled": true,
+          "subsets": [
+            {
+              "subset_id": "subset_2a",
+              "name": "all regions",
+              "predicate": { "val": "*", "criterion_type": "audience_region" }
+            }
+          ]
+        },
+        {
+          "set_id": "set_3",
+          "name": "Gender: male",
+          "enabled": true,
+          "subsets": [
+            {
+              "subset_id": "subset_3a",
+              "name": "male",
+              "predicate": { "val": "male", "criterion_type": "audience_gender" }
+            }
+          ]
+        },
+        {
+          "set_id": "set_4",
+          "name": "Age group: 20-29",
+          "enabled": true,
+          "subsets": [
+            {
+              "subset_id": "subset_4a",
+              "name": "age 20-29",
+              "predicate": { "val": "20-29", "criterion_type": "audience_age" }
+            }
+          ]
+        },
+        {
+          "set_id": "set_5",
+          "name": "High spend bracket",
+          "enabled": true,
+          "subsets": [
+            {
+              "subset_id": "subset_5a",
+              "name": "high spend",
+              "predicate": { "val": "high", "criterion_type": "audience_spend" }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "session_id": 54321,
+    "user_id": 12345,
+    "audience_id": 56789,
+    "audience_description": "Men aged 20-29 in Italy who shop at IKEA, high spend bracket, all regions",
+    "spec_version": "1.0"
+  }
+}
